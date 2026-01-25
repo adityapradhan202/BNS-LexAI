@@ -4,12 +4,10 @@ import json
 class Utility:
 
     @staticmethod
-    def initial_json_file(path:str) -> None:
+    def initialize_json_file(path:str) -> None:
         """Initializes or clears an existing json file before logging anything. Make sure to create an empty json file at path same as the 'path' parmeter.
         Args:
             path(str): path of the json file
-        Returns:
-            status(str): Status message
         """
         user_inp = input("WARNING! If this path already contains valuable information, then this function will wipe out the data completely and re-initializes the json log file! Enter Y to proceed, enter N to cancel: ")
         if user_inp.lower() == "y":
@@ -33,8 +31,6 @@ class Utility:
         Args:
             id(str): experiment id (either new or existing one incase of update)
             path(str): path or location where the logs will be stored
-        Returns:
-            status(str): Status message
         """
         try:
             with open(path, 'r') as file:
@@ -71,6 +67,11 @@ class Utility:
 
     @staticmethod
     def delete_log(id:str, path:str) -> None:
+        """Deletes a particular log
+        Args:
+            id(str): id of the log
+            path(str): path of the json file
+        """
         try:
             with open(path, 'r') as file:
                 data = json.load(file)
