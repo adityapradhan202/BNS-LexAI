@@ -1,3 +1,7 @@
 nb_venv/
 __pycache__/
 *.pyc
+notebooks/chroma_dbs/
+*.sqlite3
+*.bin
+*.pdf

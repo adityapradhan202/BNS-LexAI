@@ -25,12 +25,17 @@ class Utility:
 
     @staticmethod
     def log_experiment(id:str, path:str, description:str, commit_message:str,
-                       faithfulness:float, factual_correctness:float,
-                       answer_relevance:float, context_relevance:float) -> None:
+                       faithfulness:float, contextual_relevance:float,
+                       answer_relevance:float, contextual_recall:float, contextual_precision:float) -> None:
         """Adds or update Logs the outputs of the experiments performed using the custom rag evaluation pipeline - 'rag_badger'.
         Args:
             id(str): experiment id (either new or existing one incase of update)
             path(str): path or location where the logs will be stored
+            faithfulness(float): Passing percentage of faitfulness for the test cases
+            contextual_relevance(float): Passing percentage of contextual_relevance for the test cases
+            answer_relevance(float): Passing percentage of answer_relevance for the test cases
+            contextual_recall(float): Passing percentage of contextual_recall for the test cases
+            contextual_precision(float): Passing percentage of contextual_precision for the test cases
         """
         try:
             with open(path, 'r') as file:
@@ -45,12 +50,13 @@ class Utility:
 
         data[id] = {
             "faitfulness":faithfulness,
-            "factual_correctness":factual_correctness,
+            "contextual_precision":contextual_precision,
+            "contextual_recall":contextual_recall,
             "answer_relevance":answer_relevance,
-            "context_relevance":context_relevance,
+            "contextual_relevance":contextual_relevance,
             "log-metadata":{
-                "log-description":description,
                 "log-commit-mesage":commit_message,
+                "log-description":description,
                 "date":{'day':day, 'month':month, 'year':year},
             }
         }
