@@ -14,5 +14,21 @@
                 "year": 2026
             }
         }
+    },
+    "basline-RAG": {
+        "faitfulness": 85.0,
+        "contextual_precision": 90.0,
+        "contextual_recall": 95.0,
+        "answer_relevance": 100.0,
+        "contextual_relevance": 70.0,
+        "log-metadata": {
+            "log-commit-mesage": "Evaluation of baseline RAG with 20 test cases",
+            "log-description": "chunk-size:500, chunk-overlap:50, splitter:recursive char text, search-type:similarity with k=3, reranker:false, metadata-filtering:false, test-samples:20, rag-llm:Ollama-gemma3:4b, judge-llm:Ollama-mistral-7b, eval_tool:deep-eval",
+            "date": {
+                "day": 29,
+                "month": 1,
+                "year": 2026
+            }
+        }
     }
 }
