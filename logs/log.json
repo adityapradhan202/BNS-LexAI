@@ -1,5 +1,5 @@
 {
-    "basline-eval-1": {
+    "naive-baseline": {
         "faitfulness": 80.0,
         "contextual_precision": 100.0,
         "contextual_recall": 80.0,
@@ -7,7 +7,7 @@
         "contextual_relevance": 60.0,
         "log-metadata": {
             "log-commit-mesage": "The first evaluation - to see how it performs with dataset having only 10 samples",
-            "log-description": "chunk-size:600, chunk-overlap:20, splitter:recursive char text, search-type:similarity with k=2, reranker:false, metadata-filtering:false, test-samples:10, rag-llm:Ollama-gemma3:4b, judge-llm:Ollama-mistral-7b",
+            "log-description": "chunk-size:200, chunk-overlap:20, splitter:recursive char text, search-type:similarity with k=2, reranker:false, metadata-filtering:false, test-samples:10, rag-llm:Ollama-gemma3:4b, judge-llm:Ollama-mistral-7b",
             "date": {
                 "day": 26,
                 "month": 1,

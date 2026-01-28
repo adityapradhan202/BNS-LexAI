@@ -5,3 +5,4 @@ notebooks/chroma_dbs/
 *.sqlite3
 *.bin
 *.pdf
+*.deepeval
