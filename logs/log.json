@@ -30,5 +30,19 @@
                 "year": 2026
             }
         }
+    },
+    "baseline-vs-reranking": {
+        "eval-score": {
+            "retrieval_type_1": 90.0,
+            "retrieval_type_2": 10.0
+        },
+        "eval-score-description": "Percentage of relevant context from similarity search is 90 percent. And it's 10 percent for mmr. So even weak re-ranking is making it worse.",
+        "log-commit-message": "Comparing similarity search and mmr",
+        "log-description": "chunk-size:500, chunk-overlap:50, splitter:recursive char text, search-type:similarity/mmr(fetch_k=12) with k=3, reranker:True(mmr), metadata-filtering:false, number of queries and context:20, rag-llm:Ollama-gemma3:4b, judge-llm:Ollama-mistral-7b, eval_tool:custom_eval",
+        "date": {
+            "day": 30,
+            "month": 1,
+            "year": 2026
+        }
     }
 }

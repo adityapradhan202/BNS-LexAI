@@ -27,7 +27,7 @@ class Utility:
     def log_experiment(id:str, path:str, description:str, commit_message:str,
                        faithfulness:float, contextual_relevance:float,
                        answer_relevance:float, contextual_recall:float, contextual_precision:float) -> None:
-        """Adds or update Logs the outputs of the experiments performed using the custom rag evaluation pipeline - 'rag_badger'.
+        """Adds or update the outputs of the experiments performed using the deepeval's rag evaluation pipeline - 'rag_badger'.
         Args:
             id(str): experiment id (either new or existing one incase of update)
             path(str): path or location where the logs will be stored
@@ -97,6 +97,30 @@ class Utility:
             return
 
         print(f"Succesfully deleted id - {id}")
+
+    @staticmethod
+    def log_custom_experiment(id:str, log_data:dict, path:str) -> None:
+        """Adds the output of custom rag evaluation pipeline
+        Args:
+            data(dict): A dictionary which containing the results
+            path(str): Path of the json file
+        """
+        try:
+            with open(path, 'r') as file:
+                data = json.load(file)
+        except Exception as e:
+            print(f"Exception occured: {e}")
+            return
+
+        data[id] = log_data
+        try:
+            with open(path, "w") as file:
+                json.dump(data, file, indent=4)
+                print("Added succesfully!")
+                return
+        except Exception as e:
+            print(f"Exception occured - {e}")
+
 
 
 if __name__ == "__main__":
