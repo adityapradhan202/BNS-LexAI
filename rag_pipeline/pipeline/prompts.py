@@ -27,3 +27,30 @@ warn_prompt = """
     User query is not realted to your domain. Your domain is law and Bhartiya Nyaay Sanhita(BNS).
     Tell the same to the user, warn them, and politely request them to ask domain related questions.
     """
+
+relevancy_prompt = ChatPromptTemplate.from_template(
+    """
+    You have to check relevancy of response.
+
+    Query:
+    {query}
+
+    Response:
+    {response}
+
+    If the response seems relevant enough for answering the question classify response into 'relevant', otherwise classify it into 'irrelevant'.
+    """
+)
+
+irrelevant_response_prompt = ChatPromptTemplate.from_template(
+    """
+    Query:
+    {query}
+
+    Information:
+    {response}
+
+    Tell the user that you dont have enough information for answering this query.
+    Brief them the information given to you and tell them that this is the best possible information you can give.
+    """
+)
