@@ -11,7 +11,7 @@ embedding_model = PineconeEmbeddings(model='llama-text-embed-v2', pinecone_api_k
 pc = Pinecone(api_key=pinecone_key)
 index = pc.Index('bns-lex-ai')
 
-def fetch_docs(query:str, index=index, embedding_model=embedding_model) -> str:
+async def fetch_docs(query:str, index=index, embedding_model=embedding_model) -> str:
     """Retrieves top 3 documents from pinecone vectore store. It uses similarity search.
     Args:
         query(str): user query
@@ -22,7 +22,7 @@ def fetch_docs(query:str, index=index, embedding_model=embedding_model) -> str:
     """
     vectorstore = PineconeVectorStore(index=index, embedding=embedding_model)
     context = ""
-    docs = vectorstore.similarity_search(query=query, k=3)
+    docs = await vectorstore.asimilarity_search(query=query, k=3)
     for doc in docs:
         context += (doc.page_content + " ")
 
