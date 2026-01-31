@@ -17,7 +17,7 @@ from dotenv import load_dotenv
 load_dotenv()
 google_api_key = os.getenv('GOOGLE_API_KEY')
 
-model = ChatGoogleGenerativeAI(model='gemini-2.5-flash', api_key=google_api_key, temperature=0.8)
+model = ChatGoogleGenerativeAI(model='gemini-3-flash-preview', api_key=google_api_key) # with default temperature
 
 class AgentState(TypedDict):
     query:str

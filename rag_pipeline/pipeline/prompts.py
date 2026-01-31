@@ -18,7 +18,7 @@ augment_generate_prompt = ChatPromptTemplate.from_messages(
         messages=[
             # not using system messages Google Gemini model dont accept system messages
             ("human", "You are a helpful assistant who uses BNS(Bhartiya Nyaay Sanhita). Use the provided context to answer user query. BNS Context: {context}"),
-            ("human", "You can reply within 150 words"),
+            ("human", "Use and mention the details of the provided context in your answer!"),
             ("human", "{query}")
         ]
 )
