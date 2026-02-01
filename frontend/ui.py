@@ -3,7 +3,7 @@ from api_req import send_request
 
 col1, col2, col3 = st.columns(3)
 with col2:
-    st.image(image='../assets/logo/logo-4-bg-removed-trimmed.png', width="stretch")
+    st.image(image='static/app-logo.png', width="stretch")
 with st.form("my-form"):    
     query = st.text_area(label="Enter your query here...",
              placeholder="For example:- Punishments for critcizing someone based on religion",
@@ -17,7 +17,6 @@ if submitted:
     with st.spinner(text="Invoking RAG workflow", show_time=True):
         response = send_request(query=query)
     st.markdown(response)
-
 
 with st.sidebar:
     st.header("BNS-LexAI")

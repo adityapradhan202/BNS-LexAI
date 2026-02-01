@@ -3,10 +3,11 @@ primaryColor = "#8a12fa"
 textColor = "white"
 backgroundColor = "#151515"
 buttonRadius = "0.5rem"
-
 secondaryBackgroundColor = "#2a2a2c"
-
 
 [theme.sidebar]
 backgroundColor = "#1e1d20"
 primaryColor = "#8a12fa"
+
+[server]
+enableStaticServing = true
