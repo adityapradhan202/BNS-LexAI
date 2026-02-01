@@ -1,5 +1,3 @@
-# BNS-LexAI
-
 <p align="center">
-<img src='./assets/doc_images/RAG-workflow.svg' width="850">
+<img src='./assets/logo/logo-4-bg-removed.png' width="350">
 </p>

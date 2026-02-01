@@ -1,0 +1,12 @@
+[theme]
+primaryColor = "#8a12fa"
+textColor = "white"
+backgroundColor = "#1b1b1c"
+buttonRadius = "0.5rem"
+
+secondaryBackgroundColor = "#2a2a2c"
+
+
+[theme.sidebar]
+backgroundColor = "#1e1d20"
+primaryColor = "#8a12fa"

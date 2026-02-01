@@ -1,5 +1,6 @@
 nb_venv/
 rag_venv/
+frontend_venv/
 __pycache__/
 *.pyc
 notebooks/chroma_dbs/
