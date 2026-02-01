@@ -3,7 +3,7 @@ from api_req import send_request
 
 col1, col2, col3 = st.columns(3)
 with col2:
-    st.image(image='../assets/logo/logo-4-bg-removed.png', width="stretch")
+    st.image(image='../assets/logo/logo-4-bg-removed-trimmed.png', width="stretch")
 with st.form("my-form"):    
     query = st.text_area(label="Enter your query here...",
              placeholder="For example:- Punishments for critcizing someone based on religion",
@@ -25,4 +25,4 @@ with st.sidebar:
     st.markdown("Made by -> [Aditya Pradhan](https://github.com/adityapradhan202)")
     
     st.caption("Show us support by giving a star on the repository!")
-    st.link_button(label='GitHub Repo', url='', type="secondary")
+    st.markdown("-> [Github Repository](https://github.com/adityapradhan202/BNS-LexAI)")
